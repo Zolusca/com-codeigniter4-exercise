@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100&display=swap');
+*{
+    
+    box-sizing: border-box;
+    font-family:'JetBrains Mono', monospace;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* width: 100vh;
+    height: 50vh; */
+    background-color: #2895D7;
+    border-radius: 15px;
+    box-shadow: 0 10px 15px #2895D7;
+}
+
+form {
+    align-items: center;
+    width: 20pc;
+    /* margin: 60px auto; */
+}
+
+h1 {
+    margin: 20px;
+    text-align: center;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+hr {
+    border-top: 2px solid #4895D7;
+}
+
+
+.right {
+    position: fixed;
+    bottom: 7rem;
+    right: 0;
+}
+
+.teks{
+    width: 20pc;
+    margin: 2px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #4895D7;
+}
+.file{
+    border: none;
+    outline: none;
+    padding: 8px;
+    width: 20pc;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+    background: #2B5981;
+}
+.submit{
+    width: 20pc;
+    border: none;
+    outline: none;
+    padding: 10px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+    background: #2B5981;
+}
+.alert{
+    border: 1px solid;
+    border-radius: 10px;
+    height: 6pc;
+    text-align: center;
+    width: 20pc;
+    padding: 7px;
+    margin-bottom: 5px;
+    border: none;
+    /* position: relative; */
+    z-index: 2;
+    background-color: rgb(236, 58, 58);
+    align-items: center;
+    color: #fff;
+  }
+  form>.alertbutton{
+    width: 50%;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    margin-top: 5px;
+    background-color: #0073e6;
+  }
+  
+/* button2 {
+    border: none;
+    outline: none;
+    padding: 8px;
+    width: 300px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 200px;
+    border-radius: 5px;
+    background: rgb(133, 106, 158);
+} */
+.field{
+    /* border: 1px solid red; */
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* margin: auto; */
+    margin-top:10rem;
+    /* width: 50vh; */
+}

@@ -1,0 +1,70 @@
+*,
+html {
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: -moz-repeating-radial-gradient(#4895d7,#ebebeb,#2b5981);
+}
+
+.muammalah {
+    color: #fff;
+    margin-left: 10px;
+    margin-top: 5px;
+    font-size: 4vh;
+    font-family: 'Ubuntu', sans-serif;
+    text-transform: uppercase;
+
+
+}
+.about {
+    text-align: center;
+    color: #4895d7;
+    font-size: 8vh;
+    font-family: 'Ubuntu', sans-serif;
+    text-transform: uppercase;
+
+}
+hr {
+    margin: 0;
+    padding: 0;
+}
+.kotak1 {
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: -15px;
+}
+.btn1 {
+    color: #fff;
+    background-color: #4895d7;
+    border: none;
+    height: 120px;
+    line-break: strict;
+    width: 100%;
+    border-radius: 5px;
+    font-size: medium;
+    font-family: 'Ubuntu', sans-serif;
+    text-transform: uppercase;
+    word-spacing: 4px;
+}
+
+.kembali {
+    color: #fff;
+    background-color: #4895d7;
+    border: none;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: medium;
+    border-radius: 5px;
+    height: 40px;
+    width: 120px;
+    word-spacing: 4px;
+
+}
+a{
+    color: #fff;
+}
+
+.kotak5 {
+    margin-left: 90%;
+
+}

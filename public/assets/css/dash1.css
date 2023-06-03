@@ -1,0 +1,153 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+  }
+  .container {  display: grid;
+    grid-template-columns: 0.2fr 1fr 1.2fr 1.8fr 0.2fr;
+    grid-template-rows: 0.3fr 1.7fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "head head head head head"
+      "gap tombol content content gap1"
+      "gap tombol content content gap1";
+  }
+  
+  .head { grid-area: head;
+    font-size: 50px;
+    height: 10vh;
+    width: 95.3%; 
+    border: 1px solid;}
+      .head img {
+        width: 13rem;
+        margin-right: 0.6rem;
+      }
+      .head>span{
+        font-size: 30px;
+        float: right;
+        margin-top: 1rem;
+        margin-right: 1rem;
+      }
+  
+  .gap { grid-area: gap;
+    border: 1px solid;
+  height: 89vh; 
+  }
+  
+  .gap1 { grid-area: gap1;
+    border: 1px solid;
+  height: 89vh; 
+  }
+  
+  .content {  
+    border: 1px solid;
+    grid-area: content;
+    
+  }
+  .container-list{
+    border: 1px solid;
+    height: 35vh;
+    width: 70%;
+    margin-left: 1rem;
+    margin-top: 3rem;
+}
+  .container-list>table{
+    border: 1px solid;
+  }
+  
+      
+  
+  .tombol { grid-area: tombol;
+  height: 89vh;
+   }
+      .produk{
+        padding-top: 15px;
+        position: relative;
+      }
+        .produk>img{
+          height: 50px;
+        }
+        .produk>b{
+          padding-left: 10px;
+          font-size: 20px;
+        }
+      .produk-konten{
+        font-size: 20px;
+        display: none;
+        position: absolute;
+        min-width: 160px;
+        padding-left: 5rem;
+        z-index: 1;
+      }
+      .produk:hover .produk-konten {
+        display: block;
+      }
+      .penjualan{
+        padding-top: 15px;
+        position: relative;
+      }
+        .penjualan>img{
+          height: 50px;
+        }
+        .penjualan>b{
+          padding-left: 10px;
+          font-size: 20px;
+        }
+      .pengiriman{
+          padding-top: 15px;
+          position: relative;
+        }
+          .pengiriman>img{
+            height: 50px;
+          }
+          .pengiriman>b{
+            padding-left: 10px;
+            font-size: 20px;
+          }
+      .keuangan{
+          padding-top: 15px;
+          position: relative;
+        }
+          .keuangan>img{
+            height: 50px;
+          }
+          .keuangan>b{
+            padding-left: 10px;
+            font-size: 20px;
+          }
+      .pengaturan{
+            padding-top: 15px;
+            position: relative;
+          }
+            .pengaturan>img{
+              height: 50px;
+            }
+            .pengaturan>b{
+              padding-left: 10px;
+              font-size: 20px;
+            }
+      .statistik{
+            padding-top: 15px;
+            position: relative;
+          }
+            .statistik>img{
+              height: 50px;
+            }
+            .statistik>b{
+              padding-left: 10px;
+              font-size: 20px;
+            }
+      .bantuan{
+          padding-top: 15px;
+          position: relative;
+        }
+          .bantuan>img{
+            height: 50px;
+          }
+          .bantuan>b{
+            padding-left: 10px;
+            font-size: 20px;
+          }
+          
+  
