@@ -15,11 +15,11 @@ class TokoRepositoryTest extends TestCase
         $user       = new UserModel();
         $repository = new TokoRepository();
 
-        $user-> setId(4);
-        $user-> setNama('rendi');
-        $user-> setEmail('lolo2gmail.com');
-        $user-> setPassword('lolo2gmail.com');
-        $toko-> setNamaToko('test13');
+        $user-> setId(5);
+        $user-> setNama('juna');
+        $user-> setEmail('juna@bsi.id');
+        $user-> setPassword('junaa');
+        $toko-> setNamaToko('test14');
         $toko-> setGambar('test.jpg');
         $toko-> setUser($user);
         

@@ -1,6 +1,7 @@
 <html>
     <head>
-    <link rel="stylesheet" href="<?= base_url('/assets/css/dashboardlist.css')?>">
+    <link rel="stylesheet" href="<?= base_url('/assets/css/dash1.css')?>">
+    <link rel="stylesheet" href="<?= base_url('/assets/css/listproduk.css')?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
@@ -18,7 +19,7 @@
 
         <div class="tombol">
     <div class="produk">
-        <img src="<?= base_url('/assets/image_property/products.png')?>"> <b>Produk</b>
+        <img src="<?= base_url('/assets/image_property/products.png')?>"> <b><a href="<?= base_url('/user/dashboard')?>">Produk</a></b>
         <div class="produk-konten">
             <a href=""><b>Tambah Produk</b></a>
             <p></p>
@@ -26,22 +27,22 @@
         </div>
     </div>
     <div class="penjualan">
-        <img src="<?= base_url('assets/image_property/give-money.png')?>"> <b>penjualan</b>
+        <img src="<?= base_url('assets/image_property/give-money.png')?>"> <b><a href="<?= base_url('/user/dashboard')?>">Penjualan</a></b>
     </div>
     <div class="pengiriman">
-        <img src="<?= base_url('assets/image_property/delivery-man.png')?>"> <b>pengiriman</b>
+        <img src="<?= base_url('assets/image_property/delivery-man.png')?>"> <b><a href="<?= base_url('/user/dashboard')?>">Pengiriman</a></b>
     </div>
     <div class="keuangan">
-        <img src="../../../asset/img/money.png"> <b>keuangan</b>
+        <img src="<?= base_url('assets/image_property/money.png')?>"> <b><a href="<?= base_url('/user/dashboard')?>">Keuangan</a></b>
     </div>
     <div class="pengaturan">
-        <img src="../../../asset/img/setting.png"> <b>pengaturan</b>
+        <img src="<?= base_url('assets/image_property/setting.png')?>"> <b><a href="<?= base_url('/user/dashboard')?>">Pengaturan</a></b>
     </div>
     <div class="statistik">
-        <img src="../../../asset/img/bar-chart.png"> <b>statistik</b>
+        <img src="<?= base_url('assets/image_property/bar-chart.png')?>"> <b><a href="<?= base_url('/user/dashboard')?>">Statistik</a></b>
     </div>
     <div class="bantuan">
-        <img src="../../../asset/img/support.png"> <b>bantuan</b>
+        <img src="<?= base_url('assets/image_property/support.png')?>"> <b><a href="<?= base_url('/user/dashboard')?>">Bantuan</a></b>
     </div>
 </div>
 </div>

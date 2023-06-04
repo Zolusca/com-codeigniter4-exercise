@@ -1,0 +1,45 @@
+h1{
+    margin: 5px;
+    margin-left: 1rem;
+}
+.container-produk {
+    padding-left: 5px;
+    width: 53.8pc;
+    height: 93%;
+    display: block;
+  }
+  .container-produk {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+  }
+.item{
+    width: 85%;
+    height: 12pc;
+    border: 3px solid #4895D7 ;
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+}
+.item>img{
+    margin: 5px;
+}
+.item>table{
+    padding: 10px;
+    border: 1px solid #4895D7 ; 
+    width: 80vh;
+}
+input[type="submit"]{
+    font-size: 20px;
+    font-weight: bold;
+    color: white ;
+    background-color: #4895D7    ;
+    border: 1px #4895D7    ;
+    border-radius: 60px;
+    width: 10rem;
+    height: 2.5rem;
+}
+input[type="submit"]:hover{
+    background-color: white;
+    color: black;
+    border: 1px solid #4895D7 ;
+}

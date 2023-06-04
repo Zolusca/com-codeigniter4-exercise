@@ -18,7 +18,7 @@
     font-size: 50px;
     height: 10vh;
     width: 95.3%; 
-    border: 1px solid;}
+    border: 1px solid #4895D7;}
       .head img {
         width: 13rem;
         margin-right: 0.6rem;
@@ -31,30 +31,27 @@
       }
   
   .gap { grid-area: gap;
-    border: 1px solid;
   height: 89vh; 
   }
   
   .gap1 { grid-area: gap1;
-    border: 1px solid;
   height: 89vh; 
   }
   
   .content {  
-    border: 1px solid;
+    border: 1px solid #4895D7;
     grid-area: content;
-    
   }
-  .container-list{
+  /* .container-list{
     border: 1px solid;
     height: 35vh;
     width: 70%;
     margin-left: 1rem;
     margin-top: 3rem;
-}
-  .container-list>table{
+} */
+  /* .container-list>table{
     border: 1px solid;
-  }
+  } */
   
       
   
@@ -150,4 +147,12 @@
             font-size: 20px;
           }
           
-  
+a{
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+a:hover{
+  color: #2B5981  ;
+  font-size: 25px;
+}

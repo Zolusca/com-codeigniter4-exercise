@@ -33,9 +33,15 @@ class TokoService
             $this->   toko->setGambar  ($gambar);
             $this->   toko->setUser    ($user); /// pembuatan objek toko
             
-            $this->   tokoRepository->insertToko($this->toko);
+            $tryInsert  =  $this->   tokoRepository->insertToko($this->toko);
 
-            return true; // data berhasil ditambah
+            if($tryInsert)
+            {
+                return true; // data berhasil ditambah
+            }
+            else{
+                return false; // data gagal di insert duplikat 
+            }
         }
     }
 

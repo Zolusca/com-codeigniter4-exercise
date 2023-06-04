@@ -12,6 +12,7 @@ class Form extends BaseController
     private TokoService $tokoService;
     private $session                ;
 
+
     public function __construct()
     {
         $this->   session        = \Config\Services::session();
@@ -86,16 +87,23 @@ class Form extends BaseController
         }
 
         $registToko     =$this-> tokoService->registToko($namaToko,$newNameImg,$email);
-
-        if($this-> request->getFile('filegambar')->
-        move(FCPATH . '\image_upload\dashboard_image',$newNameImg) && $registToko)
+        
+        if($registToko)
         {
-            return view('contentutamadashboard');
+            //move file ke public/image_upload
+            if($this-> request->getFile('filegambar')->
+             move(FCPATH . '\image_upload\dashboard_image',$newNameImg))
+             {
+                header('Location:/user/dashboard');
+                exit();
+             }
+             else{
+                return view('DashboardRegister',['response'=>'move file gagal']);
+             }
+             
         }
         else{
-            echo"something wrong there";
-        }
-        
-
+            return view('DashboardRegister',['response'=>'registrasi gagal, nama toko sudah ada']);
+            }
     }
 } 

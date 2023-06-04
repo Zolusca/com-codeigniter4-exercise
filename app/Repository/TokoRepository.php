@@ -20,13 +20,16 @@ class TokoRepository
     public function insertToko(TokoModel $toko)
     {
         $query      =   "insert into toko (id_user,nama_toko,gambar,jmlh_produk) values (?,?,?,?)";
-        $statment   =   $this-> db->query($query,[
-                                $toko->getIdUser(),
-                                $toko->getNamaToko(),
-                                $toko->getGambar(),
-                                $toko->getJumlahProduk()
+        $statment   =   $this->  db->query($query,[
+                                 $toko->getIdUser(),
+                                 $toko->getNamaToko(),
+                                 $toko->getGambar(),
+                                 $toko->getJumlahProduk()
                             ]);
-        if($statment){
+        $error      = $this->   db->error();
+
+        //pengecekan duplikat user_id pada table toko
+        if($statment    &&  $error!=null){
             return true;
         }else{
             return false;

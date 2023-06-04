@@ -6,7 +6,7 @@ class Home extends BaseController
 {    
     public function index()
     {
-        return view('landingpage');
+        return view('dashboardlistproduk');
     }
 
     public function about()
