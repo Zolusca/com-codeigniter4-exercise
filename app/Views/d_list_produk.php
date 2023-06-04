@@ -1,4 +1,5 @@
-<?= $this->extend('template/DashboardTemplateList');?>
+
+<?= $this->extend('template/ListProduk');?>
 <?= $this->section('content');?>
 
         <div class="content">

@@ -1,6 +1,7 @@
 <html>
     <head>
-    <link rel="stylesheet" href="<?= base_url('/assets/css/dashboard.css')?>">
+    <link rel="stylesheet" href="<?= base_url('/assets/css/d_list.css')?>">
+    <link rel="stylesheet" href="<?= base_url('/assets/css/listproduk.css')?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
@@ -8,7 +9,7 @@
     <div class="container">
         <div class="head">
             <img src="<?= base_url('assets/image_property/Muammalah.svg')?>">
-            <span><a href="<?= base_url()?>">Keluar</a></span>
+            <span><a href="<?= base_url('/')?>">Keluar</a></span>
         </div>
         <div class="gap"></div>
         <div class="gap1"></div>
@@ -18,7 +19,7 @@
 
         <div class="tombol">
     <div class="produk">
-    <img src="<?= base_url('/assets/image_property/products.png')?>"> <b><a href="<?= base_url('/user/dashboard')?>">Produk</a></b>
+        <img src="<?= base_url('/assets/image_property/products.png')?>"> <b><a href="<?= base_url('/user/dashboard')?>">Produk</a></b>
         <div class="produk-konten">
             <a href=""><b>Tambah Produk</b></a>
             <p></p>
