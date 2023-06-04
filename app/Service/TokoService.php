@@ -58,4 +58,9 @@ class TokoService
             return false;
         }
     }
+
+    public function incrementProduk(int $id_user)
+    {
+        return $this-> tokoRepository->updateJmlhProduk($id_user);
+    }
 }

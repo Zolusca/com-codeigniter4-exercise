@@ -26,6 +26,7 @@ class TokoRepository
                                  $toko->getGambar(),
                                  $toko->getJumlahProduk()
                             ]);
+
         $error      = $this->   db->error();
 
         //pengecekan duplikat user_id pada table toko
@@ -80,5 +81,20 @@ class TokoRepository
         }finally{
             $this->   db->close();
         }
+    }
+
+    public function updateJmlhProduk(int $id_user)
+    {
+        $query  =   "update toko set jmlh_produk=jmlh_produk+1 where id_user=?";
+        $this->  db->query($query,[$id_user]);
+
+        
+            if($this->  db->affectedRows()===1)
+            {
+                return true;//berhasil
+            }
+            else{
+                return false;//gagal
+            }
     }
 }

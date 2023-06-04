@@ -16,7 +16,6 @@ class UserRepository
 
     public function InsertUser(UserModel $user)
     {
-        // $this->db=db_connect();
         $query    =   'insert into user (nama,email,password,tipe_user) values(?,?,?,?)';
         $statment =   $this->  db->query($query,[
             $user->getNama(),

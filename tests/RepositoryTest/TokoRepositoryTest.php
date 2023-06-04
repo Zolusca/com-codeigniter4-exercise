@@ -49,6 +49,13 @@ class TokoRepositoryTest extends TestCase
     {
         $repository = new TokoRepository();
         $testObject = $repository->findByEmail("xjuna@bsi.id");
-        Assert::assertNotTrue($testObject);
+        Assert::assertFalse($testObject);
+    }
+
+    public function testupdateJmlhProduk()
+    {
+        $repository = new TokoRepository();
+        $testObject = $repository->updateJmlhProduk(2);
+        Assert::assertTrue($testObject);
     }
 }
