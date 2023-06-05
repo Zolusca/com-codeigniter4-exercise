@@ -21,9 +21,9 @@
     <div class="produk">
         <img src="<?= base_url('/assets/image_property/products.png')?>"> <b><a href="<?= base_url('/user/dashboard')?>">Produk</a></b>
         <div class="produk-konten">
-            <a href=""><b>Tambah Produk</b></a>
+            <a href="<?= base_url('/user/dashboard/tambahproduk')?>"><b>Tambah Produk</b></a>
             <p></p>
-            <a href=""><b>List Produk</b></a>
+            <a href="<?= base_url('/user/dashboard/list')?>"><b>List Produk</b></a>
         </div>
     </div>
     <div class="penjualan">

@@ -3,12 +3,19 @@
     font-family: 'Ubuntu', sans-serif;
 }
 table{
+    margin: 1rem;
     font-weight: bold;
     font-size: 20px;
     border-spacing: 20px;
     border: 1px solid;
 }
 input[type="text"] {
+    font-size: 20px;
+    width: 20rem;
+    height: 1.7rem;
+    background-color: #EBEBEB    ;
+}
+input[type="number"] {
     font-size: 20px;
     width: 20rem;
     height: 1.7rem;
@@ -45,4 +52,7 @@ input[type="submit"]:hover{
     background-color: white;
     color: black;
     border: 1px solid #4895D7 ;
+}
+h1{
+    margin: 1rem;
 }
