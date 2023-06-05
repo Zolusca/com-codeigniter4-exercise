@@ -1,7 +1,6 @@
 <?php
 namespace App\Models;
 
-use App\Libraries\EncryptDecrypt;
 
 class UserModel
 {

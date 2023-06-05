@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+
 class Home extends BaseController
 {    
     public function index()
@@ -17,6 +18,15 @@ class Home extends BaseController
     public function faq()
     {
         return view('faq');
+    }
+
+    public function logout()
+    {
+        $session = \Config\Services::session();
+        $session->destroy();
+        
+        header('Location:/');
+        exit();
     }
 
     public function form()

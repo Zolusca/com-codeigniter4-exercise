@@ -1,15 +1,10 @@
 
-<?= $this->extend('template/ListProduk');?>
-<?= $this->section('content');?>
-
-        <div class="content">
-            <h1>List Produk</h1>
-            <div class="container-produk">
- 
-            <?php if($response) : ?>
+<html>
+    
+<?php if($response) : ?>
               <?php foreach($response as $data) : ?>
                 <div class="item">
-                    <img src="<?= base_url('image_upload/produk_image/'.$data['gambar'])?>">
+                    <img src="<?= base_url('assets/image_property/give-money.png')?>">
                     <span>&emsp;</span>
                     <table>
                         <tr>
@@ -40,8 +35,4 @@
                 </div>
                 <?php endforeach?>
                 <?php endif?>
-                
-            </div>
-            <!-- container-produk -->
-        </div>
-        <?= $this->endSection() ?>
+                </html>

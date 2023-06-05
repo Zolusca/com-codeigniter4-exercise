@@ -43,4 +43,9 @@ class ProdukService
             return false;
         }
     }
+
+    public function getAllProduk(string $id_toko)
+    {
+          return $this-> produkRepository->retriveData($id_toko);
+    }
 }

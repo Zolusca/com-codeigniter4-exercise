@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Landing Page With Light/Dark Mode</title>
+    <title>Muammalah</title>
     <link rel="stylesheet" href="<?= base_url('/assets/css/landingpage.css')?>" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,7 +47,7 @@
                 Kelola dan kembangkan toko onlinemu secara mudah dengan Muammalah
               </p>
               <div class="cta">
-                <a href="#" class="btn">Buat Akun</a>
+                <a href="<?= base_url('/form')?>" class="btn">Buat Akun</a>
               </div>
             </div>
 

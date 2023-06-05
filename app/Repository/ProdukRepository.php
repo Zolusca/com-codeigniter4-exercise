@@ -36,4 +36,12 @@ class ProdukRepository
             return false;
         }
     }
+
+    public function retriveData(int $id_toko)
+    {
+        $query      = "select * from produk where id_toko=?";
+        $statment   = $this->  db->query($query,[$id_toko]);
+
+        return $statment->getResultArray();
+    }
 }

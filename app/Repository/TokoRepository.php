@@ -6,7 +6,7 @@ use App\Models\UserModel;
 
 class TokoRepository
 {
-    private $db;
+    private           $db  ;
     private TokoModel $toko;
     private UserModel $user;
 

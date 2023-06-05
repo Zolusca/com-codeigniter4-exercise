@@ -11,7 +11,6 @@ use App\Service\UserService;
 class Dashboard extends BaseController
 {
     private                 $session        ;
-    private                 $time           ;
     private TokoService     $tokoService    ;
     private UserModel       $user           ;
     private TokoModel       $toko           ;
@@ -25,19 +24,37 @@ class Dashboard extends BaseController
         $this->   session        = \Config\Services::session();
     }
 
+    // dashboard view sering menggunakan session 
+    public function sessionCheck()
+    {
+        if($this-> session->get('login')==null){
+            header('Location:/');
+            exit();
+        }
+    }
+
     public function dashboardView()
     {
+        Dashboard::sessionCheck();
+
         // tokoService->findtoko mengembalikan TokoModel
-        $this->toko    = $this->   tokoService->findToko($this->session->get('email'));
+        $this->  toko    = $this->   tokoService->findToko($this->session->get('email'));
         // toko mengembalikan UserModel
-        $this->user    = $this->   toko->getUsers();
+        $this->  user    = $this->   toko->getUsers();
         
         return view('d_utama',['response'=>$this->user->getNama()]);
     }
 
     public function dashboardViewList()
     {
-        return view('d_list_produk');
+        Dashboard::sessionCheck();
+        
+       // tokoService->findtoko mengembalikan TokoModel
+       $this->  toko    = $this->   tokoService->findToko($this->session->get('email'));
+
+       $data_produk     = $this-> produkService->getAllProduk($this-> toko->getId());
+       
+        return view('d_list_produk',['response'=>$data_produk]);
     }
 
     public function dashboardtambahproduk()
@@ -46,6 +63,7 @@ class Dashboard extends BaseController
 
         if($request->is('get'))
         {
+            Dashboard::sessionCheck();
             return view('d_input_produk');
         }
 
@@ -58,31 +76,21 @@ class Dashboard extends BaseController
             $email      =   $this->  session->get('email');
             $newNameImg =   $email.'.'.$img->getClientExtension();
 
-            // delay input 
-            date_default_timezone_set('Asia/Jakarta');
-            $timeDelay  =  date("H:i:sa", strtotime("+2 minutes"));
-            $this->time = date("H:i:sa");
-
-            if($this->time===$timeDelay)
-            {
-                // tambah produk
-                $service    =  $this->   produkService->addProduk($namaProduk,$newNameImg,
-                                                            (int)$stok,(int)$harga,$email);
-
-                if($service)
-                {
-                    // memindahkan file gambar ke public/image_upload/produkimage
-                    $img->move(FCPATH . '\image_upload\produk_image',$newNameImg);
-
-                    return view('d_input_produk',['response'=>'produk berhasil ditambah']);
-                }
-
-            }
-            else{
-                return view('d_input_produk',['response'=>'delay penambahan produk 2 menit']);
-            }
-
             
+            // tambah produk
+            $service    =  $this->   produkService->addProduk($namaProduk,$newNameImg,
+                                                                (int)$stok,(int)$harga,$email);
+            if($service)
+            {
+                // memindahkan file gambar ke public/image_upload/produkimage
+                $img->move(FCPATH . '\image_upload\produk_image',$newNameImg);
+
+                return view('d_input_produk',['response'=>'produk berhasil ditambah']);
+            }
+               // data produk gagal input
+            else{
+                return view('d_input_produk',['response'=>'data gagal ditambah']);
+            }          
         }
     }
 
