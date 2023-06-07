@@ -9,7 +9,7 @@
     <div class="container">
         <div class="head">
             <img src="<?= base_url('assets/image_property/Muammalah.svg')?>">
-            <span><a href="<?= base_url('/')?>">Keluar</a></span>
+            <span><a href="<?= base_url('/logout')?>">Keluar</a></span>
         </div>
         <div class="gap"></div>
         <div class="gap1"></div>

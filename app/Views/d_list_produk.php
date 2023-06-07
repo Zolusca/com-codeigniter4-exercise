@@ -31,7 +31,7 @@
                             <td><?= $data['harga']?></td>
                         </tr>
                         <tr>
-                            <td><input type="submit" value="EDIT"></td>
+                            <td><a class="edit" href="<?= base_url('/user/dashboard/editproduk/'.$data['id_produk'])?>">Edit</a></td>
                             <td>&emsp;</td>
                             <td>&emsp;</td>
                             <td></td>

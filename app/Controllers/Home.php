@@ -10,6 +10,11 @@ class Home extends BaseController
         return view('landingpage');
     }
 
+    public function error()
+    {   
+        return view('errors/error');
+    }
+
     public function about()
     {
         return view('about');

@@ -44,8 +44,40 @@ class ProdukService
         }
     }
 
-    public function getAllProduk(string $id_toko)
+    public function getAllProduk(int $id_toko)
     {
           return $this-> produkRepository->retriveData($id_toko);
+    }
+
+    public function getAnyProduct(int $id_produk)
+    {
+        $dataModel  =   $this-> produkRepository->getAnyProduct($id_produk);
+        if($dataModel   ==  null)
+        {
+            return [];
+        }
+        else{
+            return[ $dataModel->getId_produk(),
+                    $dataModel->getNamaProduk(),
+                    $dataModel->getHarga(),
+                    $dataModel->getStok()];
+        }
+    }
+
+    public function updateData(int $id_produk,string $nama_produk,
+                              int $harga,int $stok)
+    {
+        $this->  produk->setId_produk($id_produk);
+        $this->  produk->setNama     ($nama_produk);
+        $this->  produk->setHarga    ($harga);
+        $this->  produk->setStok     ($stok);
+
+        if($this->  produkRepository->updateData($this->produk))
+        {
+            return true;//berhasil di update
+        }
+        else{
+            return false;// gagal diupdate
+        }
     }
 }

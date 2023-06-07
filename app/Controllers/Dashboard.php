@@ -94,5 +94,39 @@ class Dashboard extends BaseController
         }
     }
 
+    public function dashboardEditProduk($paramId_produk)
+    {
+        $request    = request();
+
+        if($request->is('get'))
+        {
+            $arrayData  =   $this-> produkService->getAnyProduct($paramId_produk);
+            
+            if(empty($arrayData)){
+                header('Location:/error');
+                exit();
+            }
+
+            return view('d_edit_produk',['response'=>$arrayData]);
+        }
+
+        if($request->is('post'))
+        {
+            $namaProduk =   $_POST['nama_produk'];
+            $harga      =   $_POST['harga'];
+            $stok       =   $_POST['stok'];
+            $id_produk  =   $paramId_produk;
+
+            if($this->produkService->updateData($id_produk,$namaProduk,$harga,$stok))
+            {
+                header('Location:/user/dashboard');
+                exit();
+            }
+            else{
+                header('Location:/error');
+                exit();
+            }
+        }
+    }
     
 }

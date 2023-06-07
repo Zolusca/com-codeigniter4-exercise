@@ -21,6 +21,8 @@ h1{
     flex-direction: row;
 }
 .item>img{
+    width: 15pc;
+
     margin: 5px;
 }
 .item>table{
@@ -28,17 +30,16 @@ h1{
     border: 1px solid #4895D7 ; 
     width: 80vh;
 }
-input[type="submit"]{
+.edit{
+    padding: 7px 1.7rem 7px 1.7rem;
     font-size: 20px;
     font-weight: bold;
     color: white ;
     background-color: #4895D7    ;
     border: 1px #4895D7    ;
     border-radius: 60px;
-    width: 10rem;
-    height: 2.5rem;
 }
-input[type="submit"]:hover{
+.edit:hover{
     background-color: white;
     color: black;
     border: 1px solid #4895D7 ;

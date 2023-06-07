@@ -33,6 +33,7 @@ $routes->get('/', 'Home::index');
 $routes->get('/about', 'Home::about');
 $routes->get('/pertanyaan', 'Home::faq');
 $routes->get('/logout', 'Home::logout');
+$routes->get('/error','home::error');
 
 
 $routes->get('/form', 'Home::form');
@@ -45,7 +46,10 @@ $routes->post('/form/login/dashboardregister', 'Form::dashboardRegisterProcess')
 $routes->get('/user/dashboard', 'Dashboard::Dashboardview');
 $routes->get('/user/dashboard/list', 'Dashboard::Dashboardviewlist');
 $routes->get('/user/dashboard/tambahproduk', 'Dashboard::Dashboardtambahproduk');
-$routes->post('/user/dashboard/tambahproduk', 'Dashboard::Dashboardtambahproduk');
+$routes->post('/user/dashboard/tambahproduk', 'Dashboard::Dashboardtambahproduk'); 
+
+$routes->get('/user/dashboard/editproduk/(:num)', 'Dashboard::Dashboardeditproduk/$1');
+$routes->post('/user/dashboard/editproduk/(:num)', 'Dashboard::Dashboardeditproduk/$1');
 
 /*
  * --------------------------------------------------------------------

@@ -44,4 +44,49 @@ class ProdukRepository
 
         return $statment->getResultArray();
     }
+
+    public function getAnyProduct(int $id_produk)
+    {
+        $query      =   "select * from produk where id_produk=?";
+        $statment   =   $this->  db->query($query,[$id_produk]);
+        try{
+            if($statment->getResult() !=null)
+            {
+                foreach ($statment->getResult() as $row) {
+             
+                    $this->   produk->setId_produk($row->id_produk);
+                    $this->   produk->setNama($row->nama_produk);
+                    $this->   produk->setGambar($row->gambar);
+                    $this->   produk->setHarga($row->harga);
+                    $this->   produk->setStok($row->stok);
+
+                }
+                return $this->  produk;
+                // return true;    //data ditemukan
+            }else
+            {
+                return null;   //data tidak ditemukan
+            }
+            
+        }finally{
+            $this->   db->close();
+        }
+    }
+
+    public function updateData(ProdukModel $produkModel)
+    {
+        $query  =   "update produk set nama_produk=?,harga=?,stok=? where id_produk=?";
+        $this->  db->query($query,[$produkModel->getNamaProduk(),
+                                    $produkModel->getHarga(),
+                                    $produkModel->getStok(),
+                                    $produkModel->getId_produk()]);
+
+            if($this->  db->affectedRows()===1)
+            {
+                return true;//berhasil
+            }
+            else{
+                return false;//gagal
+            }
+    }
 }
