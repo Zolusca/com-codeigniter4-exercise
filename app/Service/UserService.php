@@ -1,7 +1,7 @@
 <?php
 namespace App\Service;
 
-use App\Libraries\BadWordfilter;
+use App\Libraries\BadWordFilter;
 use App\Libraries\EncryptDecrypt;
 use App\Models\UserModel;
 use App\Repository\UserRepository;
@@ -21,7 +21,7 @@ class UserService
     {
         $userCheck  =   $this->     userRepository->findByEmail($email);
 
-        if(BadWordfilter::filterNama($nama)==true && $userCheck==null)
+        if(BadWordFilter::filterNama($nama)==true && $userCheck==null)
         {
             $passwordEncryption     =    EncryptDecrypt::encryption($password);
 

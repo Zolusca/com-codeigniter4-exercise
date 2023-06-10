@@ -1,14 +1,14 @@
 <?php
 namespace App\Libraries;
 
-class BadWordfilter
+class BadWordFilter
 {
     private static $badWord = array( "anjing","babi","pelacur");
     
     public static function filterNama(string $nama)
     {
         
-        foreach (BadWordfilter::$badWord as $kataKasar) 
+        foreach (BadWordFilter::$badWord as $kataKasar) 
         {
             // baca stripos pada php untuk ket !==false
             if (stripos($nama, $kataKasar) !== false) 
