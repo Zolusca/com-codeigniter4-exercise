@@ -23,7 +23,8 @@ class TokoService
     {
         $isExist    =   $this->   tokoRepository->findByNamaToko($namaToko);
         
-        if($isExist == true){
+        if($isExist == true)
+        {
             return false;   // nama toko sudah ada
         }
         else{
@@ -35,13 +36,8 @@ class TokoService
             
             $tryInsert  =  $this->   tokoRepository->insertToko($this->toko);
 
-            if($tryInsert)
-            {
-                return true; // data berhasil ditambah
-            }
-            else{
-                return false; // data gagal di insert duplikat 
-            }
+            if($tryInsert){  return true;    } // data berhasil ditambah
+            else          {  return false;   } // data gagal di insert duplikat 
         }
     }
 
@@ -49,14 +45,8 @@ class TokoService
     {
         $getData    =   $this-> tokoRepository->findByEmail($email);
         
-        if($getData!=null)
-        {
-            return $getData;
-        }
-        else
-        {
-            return false;
-        }
+        if($getData!=null)  {   return $getData;}
+        else                {   return false;   }
     }
 
     public function incrementProduk(int $id_user)

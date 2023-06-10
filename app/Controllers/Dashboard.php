@@ -6,7 +6,7 @@ use App\Models\TokoModel;
 use App\Models\UserModel;
 use App\Service\ProdukService;
 use App\Service\TokoService;
-use App\Service\UserService;
+
 
 class Dashboard extends BaseController
 {
@@ -52,7 +52,7 @@ class Dashboard extends BaseController
        // tokoService->findtoko mengembalikan TokoModel
        $this->  toko    = $this->   tokoService->findToko($this->session->get('email'));
 
-       $data_produk     = $this-> produkService->getAllProduk($this-> toko->getId());
+       $data_produk     = $this->   produkService->getAllProduk($this-> toko->getId());
        
         return view('d_list_produk',['response'=>$data_produk]);
     }

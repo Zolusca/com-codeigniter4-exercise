@@ -78,7 +78,7 @@
         </div>
       </div>
     </div>
-  <script  src="<?= base_url('/assets/javascript/form.js')?>"> </script>
+  <script  src="<?= base_url('/assets/Javascript/form.js')?>"> </script>
 
 </body>
 </html>

@@ -13,8 +13,8 @@ class UserService
 
     public function __construct()
     {
-        $this->     userRepository   =new UserRepository();
-        $this->     user             =new UserModel()     ;
+        $this->     userRepository   =  new UserRepository();
+        $this->     user             =  new UserModel()     ;
     }
 
     public function registrasi(string $nama,string $email,string $password)
@@ -25,18 +25,16 @@ class UserService
         {
             $passwordEncryption     =    EncryptDecrypt::encryption($password);
 
-            $this->   user->setNama($nama);
-            $this->   user->setEmail($email);
+            $this->   user->setNama    ($nama);
+            $this->   user->setEmail   ($email);
             $this->   user->setPassword($passwordEncryption);
 
             $this->   userRepository->insertUser($this->    user);
-            return true;
-            // return $data    =["response"=>"data berhasil ditambah"];
+            
+            return true;//data berhasil ditambah
 
         }else{
-            return false;
-            // return $data    =["response"=>"nama ditolak, 
-            // sensitif atau sudah digunakan, password lemah "]; 
+            return false;//"nama ditolak, sensitif atau sudah digunakan, password lemah " 
         }  
     }
 
@@ -44,13 +42,15 @@ class UserService
     {
         $userCheck  =   $this->   userRepository->findByEmail($email);
 
-        if($userCheck==null){
+        if($userCheck==null)
+        {
             return null;//false data tidak ditemukan
         }
 
         $passwordDecryption     = EncryptDecrypt::decryption($userCheck->getPassword());
         
-        if($password==$passwordDecryption){
+        if($password==$passwordDecryption)
+        {
             return $userCheck;//true data ditemukan dan pass sesuai
         }
         else{

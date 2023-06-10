@@ -28,13 +28,9 @@ class ProdukRepository
                         $produk->getHarga(),
                         $produk->getStok(),
                      ]);
-        if($statment)
-        {
-            return true;
-        }
-        else{
-            return false;
-        }
+
+        if($statment){  return true;    }
+        else         {  return false;   }
     }
 
     public function retriveData(int $id_toko)
@@ -49,28 +45,23 @@ class ProdukRepository
     {
         $query      =   "select * from produk where id_produk=?";
         $statment   =   $this->  db->query($query,[$id_produk]);
+     
         try{
             if($statment->getResult() !=null)
             {
-                foreach ($statment->getResult() as $row) {
-             
+                foreach ($statment->getResult() as $row) 
+                {
                     $this->   produk->setId_produk($row->id_produk);
-                    $this->   produk->setNama($row->nama_produk);
-                    $this->   produk->setGambar($row->gambar);
-                    $this->   produk->setHarga($row->harga);
-                    $this->   produk->setStok($row->stok);
-
+                    $this->   produk->setNama     ($row->nama_produk);
+                    $this->   produk->setGambar   ($row->gambar);
+                    $this->   produk->setHarga    ($row->harga);
+                    $this->   produk->setStok     ($row->stok);
                 }
-                return $this->  produk;
-                // return true;    //data ditemukan
-            }else
-            {
-                return null;   //data tidak ditemukan
-            }
+                return $this->  produk;    //data ditemukan
+
+            }else{  return null;    }   //data tidak ditemukan
             
-        }finally{
-            $this->   db->close();
-        }
+        }finally{   $this->   db->close();  }
     }
 
     public function updateData(ProdukModel $produkModel)

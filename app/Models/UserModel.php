@@ -21,7 +21,7 @@ class UserModel
         return $this->  email;
     }
     public function getPassword(){
-        return $this->password;
+        return $this->  password;
     }
     public function getTipeUser(){
         return $this->  tipeUser;
@@ -33,6 +33,7 @@ class UserModel
         $this-> id   =   $id;
     }
     ////////////// set id disini hanya utk keperluan dari database ke sistem////////////
+    
     public function setNama(string $nama){
         $this-> nama =   $nama;
     }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Membuat Text Field</title>
-    <link rel="stylesheet" href="<?= base_url('/assets/css/dashboardregister.css')?>">
+    <link rel="stylesheet" href="<?= base_url('/assets/css/DashboardRegister.css')?>">
 </head>
 <body>
 <?php if(isset($response)){?>

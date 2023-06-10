@@ -21,20 +21,17 @@ class TokoRepository
     {
         $query      =   "insert into toko (id_user,nama_toko,gambar,jmlh_produk) values (?,?,?,?)";
         $statment   =   $this->  db->query($query,[
-                                 $toko->getIdUser(),
-                                 $toko->getNamaToko(),
-                                 $toko->getGambar(),
-                                 $toko->getJumlahProduk()
-                            ]);
+                                     $toko->getIdUser(),
+                                     $toko->getNamaToko(),
+                                     $toko->getGambar(),
+                                     $toko->getJumlahProduk()
+                                    ]);
 
         $error      = $this->   db->error();
 
         //pengecekan duplikat user_id pada table toko
-        if($statment    &&  $error!=null){
-            return true;
-        }else{
-            return false;
-        }
+        if($statment    &&  $error!=null){   return true;    }
+        else                             {  return false;    }
     }
 
     public function findByNamaToko(string $namaToko)
@@ -42,16 +39,17 @@ class TokoRepository
         $query      =   "select id_toko from toko where nama_toko=?";
         $statment   =   $this->   db->query($query,[$namaToko]);
 
-        try{
-            if($statment->getResult()!=null){
+        try
+        {
+            if($statment->getResult()!=null)
+            {
                 return true;    //data ditemukan
             }else
             {
                 return false;   //data tidak ditemukan
             }
-        }finally{
-            $this->   db->close();
-        }
+
+        }finally{   $this->   db->close();  }
     }
 
     public function findByEmail(string $email)
@@ -60,27 +58,25 @@ class TokoRepository
         $statment   =   $this->   db->query($query,[$email]);
 
         try{
-            if($statment->getResult()!=null){
-                foreach ($statment->getResult() as $row) {
-                    $this->   user->setId($row->id_user);
-                    $this->   user->setEmail($row->email);
-                    $this->   user->setNama($row->nama);
-                    $this->   toko->setId($row->id_toko);
-                    $this->   toko->setNamaToko($row->nama_toko);
-                    $this->   toko->setGambar($row->gambar);
-                    $this->   toko->setJmlhProduk($row->jmlh_produk);
-                    $this->   toko->setUser($this->user);
-                }
-                return $this->toko;
-                // return true;    //data ditemukan
-            }else
+            if($statment->getResult()!=null)
             {
-                return null;   //data tidak ditemukan
-            }
+                foreach ($statment->getResult() as $row) 
+                {
+                    $this->   user->setId           ($row->id_user);
+                    $this->   user->setEmail        ($row->email);
+                    $this->   user->setNama         ($row->nama);
+                    $this->   toko->setId           ($row->id_toko);
+                    $this->   toko->setNamaToko     ($row->nama_toko);
+                    $this->   toko->setGambar       ($row->gambar);
+                    $this->   toko->setJmlhProduk   ($row->jmlh_produk);
+                    $this->   toko->setUser         ($this->user);   
+                }
+                // return true;    //data ditemukan
+                return $this->toko;
+
+            }else{  return null;    }//data tidak ditemukan  
             
-        }finally{
-            $this->   db->close();
-        }
+        }finally{   $this->   db->close();  }
     }
 
     public function updateJmlhProduk(int $id_user)

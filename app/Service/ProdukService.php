@@ -3,7 +3,6 @@ namespace App\Service;
 
 use App\Models\ProdukModel;
 use App\Repository\ProdukRepository;
-use App\Repository\TokoRepository;
 
 class ProdukService
 {
@@ -24,6 +23,7 @@ class ProdukService
     {
         // mendapatkan data toko melalui email session, return object toko
         $tokoModel  =   $this->   tokoService->findToko($email);
+        
         // keperluan penambahan jumlah produk pada tabel toko
         $idUser     =   $tokoModel->getIdUser();
         
@@ -52,6 +52,7 @@ class ProdukService
     public function getAnyProduct(int $id_produk)
     {
         $dataModel  =   $this-> produkRepository->getAnyProduct($id_produk);
+        
         if($dataModel   ==  null)
         {
             return [];
@@ -60,7 +61,8 @@ class ProdukService
             return[ $dataModel->getId_produk(),
                     $dataModel->getNamaProduk(),
                     $dataModel->getHarga(),
-                    $dataModel->getStok()];
+                    $dataModel->getStok()
+                ];
         }
     }
 

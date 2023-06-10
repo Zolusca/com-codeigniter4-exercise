@@ -3,15 +3,17 @@ namespace App\Libraries;
 
 class EncryptDecrypt
 {
-    private static string $password;
-    private static string $encrypt="";
-    private static string $decrypt="";
+    private static string $password     ;
+    private static string $encrypt  ="" ;
+    private static string $decrypt  ="" ;
 
     public static function encryption(string $password)
     {
         EncryptDecrypt::$password   =   $password;
+
         // merubah string ke char bentuk array
         $arrayStr                   =   str_split(EncryptDecrypt::$password);
+        
         //merubah satu persatu char pad array
         foreach($arrayStr as $char)
         {
@@ -21,6 +23,7 @@ class EncryptDecrypt
             $tmp    +=5; 
             //menyimpan hasil perubahan 
             $newWord =  chr($tmp);
+            
             EncryptDecrypt::$encrypt .= $newWord;
         }
         return EncryptDecrypt::$encrypt;

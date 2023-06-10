@@ -26,7 +26,7 @@
         </div>
     </div>
     <div class="penjualan">
-        <img src="<?= base_url('assets/image_property/give-money.png')?>"> <b><a href="<?= base_url('/user/dashboard')?>">Penjualan</a></b>
+        <img src="<?= base_url('assets/image_property/give-money.png')?>"> <b><a href="<?= base_url('/user/dashboard/order')?>">Penjualan</a></b>
     </div>
     <div class="pengiriman">
         <img src="<?= base_url('assets/image_property/delivery-man.png')?>"> <b><a href="<?= base_url('/user/dashboard')?>">Pengiriman</a></b>

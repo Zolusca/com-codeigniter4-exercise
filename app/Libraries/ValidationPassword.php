@@ -11,7 +11,8 @@ class ValidationPassword
             return false;
         }else
         {
-            if($nama === $password){
+            if($nama === $password)
+            {
                 return false;
             }
             else{

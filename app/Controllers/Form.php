@@ -10,7 +10,7 @@ class Form extends BaseController
 {
     private UserService $userService;
     private TokoService $tokoService;
-    private $session                ;
+    private             $session    ;
 
 
     public function __construct()
@@ -25,10 +25,12 @@ class Form extends BaseController
         $email      =   $_POST['email'];
         $password   =   $_POST['password'];
 
-        $resultData     =   $this->  userService->  login($email,$password);//return UserModel
+        //return UserModel
+        $resultData     =   $this->  userService->  login($email,$password);
 
         if($resultData  !=  null){
             
+            //inisialisasi Session User Login
             $data=[
                 "email"=>$email,
                 "login"=>true
@@ -46,7 +48,7 @@ class Form extends BaseController
             }
         }
         else{
-            return view('form',['response'=>'email dan password salah']);
+            return view('Form',['response'=>'email dan password salah']);
         }
     }
 
@@ -57,20 +59,21 @@ class Form extends BaseController
         $password           =   $_POST['password'];
         $password_verify    =   $_POST['password1'];
 
+        // pengecekan validasi password
         $dataCheck  =   ValidationPassword::isStrongPassword($nama,$password,
                                                             $password_verify);
         if($dataCheck   == false)
         {
-            return view('form',['response'=>'password terlalu lemah']);
+            return view('Form',['response'=>'password terlalu lemah']);
         }
 
-        $registSevice   =   $this-> userService-> registrasi($nama,$email,$password);
+        $registService   =   $this-> userService-> registrasi($nama,$email,$password);
         
-        if($registSevice    ==  true)
+        if($registService    ==  true)
         {
-            return view('form',['response'=>'akun berhasil dibuat']);
+            return view('Form',['response'=>'akun berhasil dibuat']);
         }else{
-            return view('form',['response'=>'akun telah ada atau nama sensitif']);
+            return view('Form',['response'=>'akun telah ada atau nama sensitif']);
         }    
     }
 
@@ -83,10 +86,10 @@ class Form extends BaseController
 
         if($img->getSize()>5000000)
         {
-            return view('dashboardregister',['response'=>'ukuran file maks 500kb']);
+            return view('DashboardRegister',['response'=>'ukuran file maks 500kb']);
         }
 
-        $registToko     =$this-> tokoService->registToko($namaToko,$newNameImg,$email);
+        $registToko     =  $this->  tokoService->registToko($namaToko,$newNameImg,$email);
         
         if($registToko)
         {

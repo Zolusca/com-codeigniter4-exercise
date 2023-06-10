@@ -51,6 +51,10 @@ $routes->post('/user/dashboard/tambahproduk', 'Dashboard::Dashboardtambahproduk'
 $routes->get('/user/dashboard/editproduk/(:num)', 'Dashboard::Dashboardeditproduk/$1');
 $routes->post('/user/dashboard/editproduk/(:num)', 'Dashboard::Dashboardeditproduk/$1');
 
+
+//testing order
+$routes->get('/user/dashboard/order','Home::testingOrder');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

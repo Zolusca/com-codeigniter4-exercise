@@ -2,12 +2,14 @@
 
 namespace App\Controllers;
 
+use App\Repository\OrderRepository;
+use App\Service\TokoService;
 
 class Home extends BaseController
 {    
     public function index()
-    {   
-        return view('landingpage');
+    {          
+        return view('LandingPage');
     }
 
     public function error()
@@ -36,19 +38,40 @@ class Home extends BaseController
 
     public function form()
     {
-        return view('form');
+        return view('Form');
     }
     
     public function dashboardRegisterForm()
     {
         $session        = \Config\Services::session();
 
-        if($session->get('login')==true){
+        if($session->get('login')==true)
+        {
             return view('DashboardRegister');
-        }else{
+        }else
+        {
             header('Location:/');
             exit();
         }
     }
-    
+
+    public function testingOrder()
+    {
+        $session               = \Config\Services::session();
+        $orderRepository       =   new OrderRepository();
+        $tokoService           =   new TokoService();
+        $emailUser             =   $session->get('email');
+        
+        if($session->get('login')==true)
+        {
+            $toko   =   $tokoService->findToko($emailUser);
+
+            $data   =   $orderRepository->getOrder($toko->getId());
+
+            return view('d_pesanan',['response'=>$data]);
+        }else
+        {
+            return view('d_pesanan');
+        }
+    }
 }
