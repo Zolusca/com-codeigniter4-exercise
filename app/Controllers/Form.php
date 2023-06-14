@@ -64,7 +64,7 @@ class Form extends BaseController
                                                             $password_verify);
         if($dataCheck   == false)
         {
-            return view('Form',['response'=>'password terlalu lemah']);
+            return view('Form',['response'=>'password terlalu lemah atau tidak sesuai']);
         }
 
         $registService   =   $this-> userService-> registrasi($nama,$email,$password);
