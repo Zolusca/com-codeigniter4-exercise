@@ -24,7 +24,7 @@ class Home extends BaseController
 
     public function faq()
     {
-        return view('faq');
+        return view('pertanyaan');
     }
 
     public function logout()

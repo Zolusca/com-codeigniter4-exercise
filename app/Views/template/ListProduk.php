@@ -1,5 +1,6 @@
 <html>
     <head>
+    <title>list produk</title>
     <link rel="stylesheet" href="<?= base_url('/assets/css/d_list.css')?>">
     <link rel="stylesheet" href="<?= base_url('/assets/css/listproduk.css')?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
