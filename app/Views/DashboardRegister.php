@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Membuat Text Field</title>
+    <title>Dashboard Register</title>
+    <link rel="icon" type="image/gif" href="<?= base_url('/assets/image_property/letter-m.png')?>">
     <link rel="stylesheet" href="<?= base_url('/assets/css/DashboardRegister.css')?>">
 </head>
 <body>

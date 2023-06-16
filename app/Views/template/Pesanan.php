@@ -1,5 +1,6 @@
 <html>
     <head>
+    <link rel="icon" type="image/gif" href="<?= base_url('/assets/image_property/letter-m.png')?>">
     <link rel="stylesheet" href="<?= base_url('/assets/css/d_list.css')?>">
     <link rel="stylesheet" href="<?= base_url('/assets/css/DataPesanan.css')?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">

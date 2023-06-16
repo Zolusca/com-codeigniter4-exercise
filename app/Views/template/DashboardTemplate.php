@@ -1,7 +1,8 @@
 <html>
     <head>
-        <title>dashboard</title>
+    <title>dashboard</title>
     <link rel="stylesheet" href="<?= base_url('/assets/css/dashboard.css')?>">
+    <link rel="icon" type="image/gif" href="<?= base_url('/assets/image_property/letter-m.png')?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">

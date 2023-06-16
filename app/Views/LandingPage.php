@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Muammalah</title>
+    <link rel="icon" type="image/gif" href="<?= base_url('/assets/image_property/letter-m.png')?>">
     <link rel="stylesheet" href="<?= base_url('/assets/css/LandingPage.css')?>" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
